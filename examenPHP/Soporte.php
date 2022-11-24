@@ -3,18 +3,21 @@
 class soporte{
 
     //Atributos
-    public $cintas;
-    public $Videojuegos;
+    public $titulo;
+    public $precio;
+
+    
 
     //Construcctor
-    public function __construct($cintas, $Videojuegos = 0)
+    public function __construct($titulo, $precio)
     {
-        $this->cintas = $cintas;
-        $this->Videojuegos = $Videojuegos;
+        $this->titulo = $titulo;
+        $this->precio = $precio;
         
     }
 
+
     //Cont privada
-    private const IVA = "21%";
+    private const PrecioConIVA = "21%";
 
 }
