@@ -10,6 +10,7 @@ $miDisco->muestraResumen();
 
 include "Juego.php";
 
+
 $gow = new Juego("God of War: Ragnarök", "PS4", 1,2,); 
 echo "<strong>" . $gow->titulo . "</strong>"; 
 echo "<br>Consola: " . $gow->consola; 

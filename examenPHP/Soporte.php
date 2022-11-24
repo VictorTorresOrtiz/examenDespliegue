@@ -6,7 +6,7 @@ class Soporte {
     public $titulo;
     public $precio;
 
-    
+    private const IVA = 21/100;
 
     //Construcctor
     public function __construct($titulo, $precio)
@@ -16,8 +16,21 @@ class Soporte {
         
     }
 
+    public function getPrecio(){
+        return  $this->precio;
+    }
 
-    //Cont privada
-    private const PrecioConIVA = "21%";
+    public function getTitulo(){
+        return  $this->titulo;
+    }
+
+    public function resumen( ){
+        return $this->getTitulo().'- '. $this->getPrecio();
+    }
+        
+            
+
+
+  
 
 }
