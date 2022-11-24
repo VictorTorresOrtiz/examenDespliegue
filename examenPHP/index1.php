@@ -14,3 +14,4 @@ include "Disco.php";
 $disco = new disco("Ingles", 3.4); 
 echo "<br>Idioma: " . $disco->idiomas;
 echo "<br>Formato: " . $disco->formatoPantalla; 
+$disco -> resumenDisco();

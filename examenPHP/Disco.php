@@ -12,5 +12,19 @@ class disco extends Soporte {
         
     }
 
+    public function getIdiomas(){
+        return  $this->idiomas;
+    }
+
+    public function getFormatoPantalla(){
+        return  $this->formatoPantalla;
+    }
+
+    public function resumenDisco()
+    {
+        return $this->getIdiomas().'- '. $this->getFormatoPantalla();
+    }
+
+
     
 }
