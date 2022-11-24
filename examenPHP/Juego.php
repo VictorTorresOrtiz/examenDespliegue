@@ -1,11 +1,16 @@
 <?php 
 class Juego extends Soporte {
 
-    public $titulo;
+
     public $consola;
     public $minNumJugadores;
     public $maxNumJugadores;
     public $muestraJugadoresPosibles = array();
+
+    public function getTitulo()
+    {
+        return  $this->titulo;
+    }
 
     public function __construct($titulo, $consola, $minNumJugadores, $maxNumJugadores, $muestraJugadoresPosibles = array()) {
         $this->titulo = $titulo;
