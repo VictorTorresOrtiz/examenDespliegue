@@ -1,6 +1,6 @@
 <?php
-//Prueba Soporte PART1
-
+//Prueba Soporte y Disco PART1
+/*
 include "Soporte.php";
 $soporte1 = new Soporte("Transformers", 32); 
 echo "<strong>" . $soporte1->titulo . "</strong>"; 
@@ -13,3 +13,4 @@ include "Disco.php";
 $disco = new disco("Ingles", 3.4); 
 echo "<br>Idioma: " . $disco->idiomas;
 echo "<br>Formato: " . $disco->formatoPantalla; 
+*/

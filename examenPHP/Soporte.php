@@ -1,6 +1,6 @@
 <?php
 
-class soporte{
+class Soporte {
 
     //Atributos
     public $titulo;
