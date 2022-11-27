@@ -1,36 +1,27 @@
 <?php
-
-class Soporte {
-
-    //Atributos
+class Soporte{
     public $titulo;
-    public $precio;
-
-    private const IVA = 21/100;
-
-    //Construcctor
-    public function __construct($titulo, $precio)
-    {
-        $this->titulo = $titulo;
-        $this->precio = $precio;
-        
+    protected $numero;
+    private $precio;
+     const IVA=21/100;
+    public function __construct($titulo,$numero,$precio){
+        $this->titulo=$titulo;
+        $this->numero=$numero;
+        $this->precio=$precio;
     }
-
     public function getPrecio(){
-        return  $this->precio;
-    }
-
-    public function getTitulo(){
-        return  $this->titulo;
-    }
-
-    public function resumen( ){
-        return $this->getTitulo().'- '. $this->getPrecio();
-    }
-        
-            
-
-
-  
-
+        return $this->precio;
+     }
+     public function getPrecioConIva(){
+        return $this->precio + $this->precio* $this::IVA;
+     }
+     public function getNumero(){
+        return $this->numero;
+     }
+     public function muestraResumen(){
+        echo "<br>Titulo: <strong>" . $this->titulo . "</strong>"; 
+        echo "<br>Numero: " . $this->getNumero() . ""; 
+        echo "<br>Precio: " . $this->getPrecio() . " euros"; 
+        echo "<br>Precio IVA: " . $this->getPrecioConIVA() . " euros";
+     }
 }
