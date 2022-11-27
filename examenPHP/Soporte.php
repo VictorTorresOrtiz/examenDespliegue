@@ -1,4 +1,5 @@
 <?php
+//Si convertimos esta clase a abtract no se podrán instanciar objetos de la misma
 class Soporte{
     public $titulo;
     protected $numero;
