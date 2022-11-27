@@ -34,8 +34,8 @@ class Videoclub{
     }
     public function listarSocios(){
         echo "Número de socios: $this->numSocios <br>";
-        foreach($this->socios as $s){
-            echo "<li> $this->socios[$s] </li>";
+        foreach($this->socios as $so){
+            echo "<li> $this->socios[$so] </li>";
         }
     }
     public function alquilarSocioProducto($numeroCliente,$numeroSoporte){
