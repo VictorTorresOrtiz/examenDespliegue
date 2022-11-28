@@ -3,7 +3,7 @@
 include_once "autoload.php";
 use app\VideoClub;
 
-$vc = new Videoclub("Severo 8A"); 
+$vc = new Videoclub("(OLGA Y EL PHP MALIGLO SL)"); 
 
 //voy a incluir unos cuantos soportes de prueba 
 $vc->incluirJuego("God of War", 19.99, "PS4", 1, 1); 
