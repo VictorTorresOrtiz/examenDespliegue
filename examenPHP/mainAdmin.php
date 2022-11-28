@@ -4,7 +4,7 @@
     use app\VideoClub;
 
     if ($_GET) {
-        $err = $_GET['errores'];
+        $errores = $_GET['errores'];
     }
     session_start();
 ?>
