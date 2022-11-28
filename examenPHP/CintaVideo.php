@@ -1,14 +1,21 @@
-<?php
-include "Soporte.php";
-class CintaVideo extends Soporte{
-    private $duracion;
-    public function __construct($titulo,$numero,$precio,$duracion){
-        parent::__construct($titulo,$numero,$precio);
-        $this->duracion=$duracion;
+<?php 
+    include_once 'Soporte.php';
+    
+    class CintaVideo extends Soporte{
+
+        public function __construct(   
+            $titulo,
+            $numero,
+            $precio,
+            private $duracion
+        )
+        {
+            Soporte::__construct($titulo,$numero,$precio);
+        }
+
+        
+        public function muestraResumen(){ 
+            parent::muestraResumen();
+            echo "Duración: ".$this->duracion."<br>";
+        }
     }
-    public function muestraResumen(){
-        parent:: muestraResumen();
-        echo "<br>Duracion: " . $this->duracion. " minutos"; 
-    }
-}
-?>

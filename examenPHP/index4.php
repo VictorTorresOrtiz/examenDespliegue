@@ -1,6 +1,11 @@
 <?php
 
 /*
+include_once 'Cliente.php';
+include_once 'CintaVideo.php';
+include_once 'Juego.php';
+include_once 'Disco.php';
+
 $cliente1 = new Cliente("Sam Widwiki", 24);
 $cliente2 = new Cliente("Victor torres", 21);
 

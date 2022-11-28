@@ -1,17 +1,26 @@
-<?php
-include "Soporte.php";
-class Disco extends Soporte{
-    public $idiomas;
-    private $formatoPantalla;
-    public function __construct($titulo,$numero,$precio,$idiomas,$formatoPantalla){
-        parent::__construct($titulo,$numero,$precio);
-        $this->idiomas=$idiomas;
-        $this->formatoPantalla=$formatoPantalla;
+<?php 
+    include_once 'Soporte.php';
+
+    class Disco extends Soporte{
+
+        public function __construct(   
+            $titulo,
+            $numero,
+            $precio,
+            public $idiomas,
+            private $formatPantalla
+        )
+        {
+            Soporte::__construct($titulo,$numero,$precio);
+        }
+
+        // Get the value of resumen
+        public function muestraResumen(){
+            parent::muestraResumen();
+            echo "Idioma: ".$this->idiomas."<br>";
+            echo "Formato pantalla: ".$this->formatPantalla."<br>";
+        }
     }
-    public function muestraResumen(){
-        parent:: muestraResumen();
-        echo "<br>Idiomas: " . $this->idiomas. ""; 
-        echo "<br>Formato pantalla: " . $this->formatoPantalla . "";
-    }
-}
+
+
 ?>

@@ -1,28 +1,36 @@
-<?php
-include "Soporte.php";
-class Juego extends Soporte{
-    public $consola;
-    private $minNumJugadores;
-    private $maxNumJugadores;
-    public function __construct($titulo,$numero,$precio,$consola,$minNumJugadores,$maxNumJugadores){
-        parent::__construct($titulo,$numero,$precio);
-        $this->consola=$consola;
-        $this->minNumJugadores=$minNumJugadores;
-        $this->maxNumJugadores=$maxNumJugadores;
-    }
-    public function muestraJugadoresPosibles(){
-        if($this->minNumJugadores==1 && $this->maxNumJugadores==1){
-            echo "Dedicado a  un jugador";
-        }else if($this->minNumJugadores==$this->maxNumJugadores){
-            echo "Para $this->minNumJugadores jugadores";
-        }else{
-            echo "Desde $this->minNumJugadores hasta $this->maxNumJugadores jugadores";
+<?php 
+    include_once 'Soporte.php';
+
+    class Juego extends Soporte{
+
+        public function __construct(   
+            $titulo,
+            $numero,
+            $precio,
+            public $consola,
+            private $minNumJugadores,
+            private $maxNumJugadores
+        )
+        {
+            Soporte::__construct($titulo,$numero,$precio);
         }
+
+    
+        public function muestraJugadoresPosible(){
+            if($this->minNumJugadores == $this->maxNumJugadores){
+                return ($this->maxNumJugadores > 1) ? "<br>Para un maximo de".$this->maxNumJugadores." jugadores." : "<br>";
+            }else{
+                return "<br>Desde ".$this->minNumJugadores." hasta".$this->maxNumJugadores." jugadores.<br>";
+            }
+        }
+
+        // Get the value of resumen
+        public function muestraResumen(){
+            parent::muestraResumen();
+            echo "Consola: ".$this->consola;
+            echo $this->muestraJugadoresPosible();   
+        }
+
     }
-    public function muestraResumen(){
-        parent:: muestraResumen();
-        echo "<br>Consola: $this->consola";
-        echo $this->muestraJugadoresPosibles(); 
-    }
-}
+
 ?>

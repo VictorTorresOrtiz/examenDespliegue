@@ -1,28 +1,43 @@
 <?php
-//Si convertimos esta clase a abtract no se podrán instanciar objetos de la misma
-class Soporte{
-    public $titulo;
-    protected $numero;
-    private $precio;
-     const IVA=21/100;
-    public function __construct($titulo,$numero,$precio){
-        $this->titulo=$titulo;
-        $this->numero=$numero;
-        $this->precio=$precio;
+//Como la clasd es abstract no se puede inicializar ningun objeto de esta clase
+include_once 'Resumible.php'; //  No hace falta que lo implementen los hijos ya que ellos la implementan por herencia.
+abstract class Soporte implements Resumible
+{
+
+    private const IVA = 0.21;
+
+    public function __construct(
+        public $titulo,
+        protected $numero,
+        private $precio
+    ) {
     }
-    public function getPrecio(){
+
+    // Get the value of precio
+    public function getPrecio()
+    {
         return $this->precio;
-     }
-     public function getPrecioConIva(){
-        return $this->precio + $this->precio* $this::IVA;
-     }
-     public function getNumero(){
+    }
+
+    // Get the value of Precio con IVA
+    public function getPrecioConIva()
+    {
+        $precio = $this->precio + ($this->precio * self::IVA);
+        return $precio;
+    }
+
+    // Get the value of numero
+    public function getNumero()
+    {
         return $this->numero;
-     }
-     public function muestraResumen(){
-        echo "<br>Titulo: <strong>" . $this->titulo . "</strong>"; 
-        echo "<br>Numero: " . $this->getNumero() . ""; 
-        echo "<br>Precio: " . $this->getPrecio() . " euros"; 
-        echo "<br>Precio IVA: " . $this->getPrecioConIVA() . " euros";
-     }
+    }
+
+    // Get the value of resumen
+    public function muestraResumen(){
+        echo "<br><strong>" . $this->titulo . "</strong>";
+        echo "<br>Número: " . $this->numero;
+        echo "<br>Precio: " . $this->precio . " euros";
+        echo "<br>Precio IVA: " . $this->getPrecioConIVA() . " euros<br>";
+
+    }
 }
