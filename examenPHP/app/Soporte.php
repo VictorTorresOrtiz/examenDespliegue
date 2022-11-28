@@ -1,8 +1,10 @@
 <?php
 //Como la clasd es abstract no se puede inicializar ningun objeto de esta clase
-include_once 'Resumible.php'; //  No hace falta que lo implementen los hijos ya que ellos la implementan por herencia.
-abstract class Soporte implements Resumible
-{
+ //  No hace falta que lo implementen los hijos ya que ellos la implementan por herencia.
+ namespace app;
+ include_once 'autoload.php';
+ use app\Resumible;
+abstract class Soporte implements Resumible {
 
     private const IVA = 0.21;
 

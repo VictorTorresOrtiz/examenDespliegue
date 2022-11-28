@@ -1,4 +1,8 @@
 <?php 
+namespace app;
+
+include_once 'autoload.php';
+use app\Soporte;
 class Cliente{
     public $nombre;
     private $numero;
