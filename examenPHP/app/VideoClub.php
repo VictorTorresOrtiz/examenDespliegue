@@ -1,11 +1,17 @@
 <?php
+
 namespace app;
 
 include_once "autoload.php";
+
 use app\Juego;
 use app\Disco;
 use app\CintaVideo;
 use app\Cliente;
+use util\ClienteNoEncontradoException;
+use util\CupoSuperadoException;
+use util\SoporteNoEncontradoException;
+use util\SoporteYaAlquiladoException;
 class VideoClub
 {
     private $numProductos = 0;

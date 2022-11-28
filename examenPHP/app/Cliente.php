@@ -2,7 +2,12 @@
 namespace app;
 
 include_once 'autoload.php';
+
 use app\Soporte;
+use util\CupoSuperadoException;
+use util\SoporteNoEncontradoException;
+use util\SoporteYaAlquiladoException;
+
 class Cliente{
     public $nombre;
     private $numero;
@@ -52,9 +57,10 @@ class Cliente{
         if($alquilado){
             echo "Devolución realizada correctamente";
             $this->numSoportesAlquilados=$this->getNumSoportesAlquilados()-1;
-        }else{
-            echo "Este soporte no se encuentra alquilado";
+        } throw new SoporteNoEncontradoException("<br>El soporte " . $numSoporte . " no está en sus alquileres.<br>");{
+            
         }
+    
     }
     public function listaAlquileres(){
         echo "<br>Dispone de : " . count($this->soportesAlquilados) . " alquileres: <br>";
